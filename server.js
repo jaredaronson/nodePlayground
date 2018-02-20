@@ -2,10 +2,22 @@ var express = require('express');
 
 var app = express();
 
-var server = app.listen(3000);
+app.listen(3000, function(){
+
+    console.log('app is running');
+
+});
+
+// app.get('/', function(req, res){
+
+//     res.send('test');
+
+// });
 
 app.use(express.static('public'));
 
-console.log("My socket server is running");
+app.get('/', function(req, res){
 
-//test
+    res.sendFile(__dirname + '/index.html');
+
+});
