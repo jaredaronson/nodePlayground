@@ -2,7 +2,10 @@ var express = require('express');
 
 var app = express();
 
-app.listen(3000, function(){
+const PORT = process.env.PORT || 8080;
+
+
+app.listen(PORT, function(){
 
     console.log('app is running');
 
