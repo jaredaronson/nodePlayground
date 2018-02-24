@@ -1,6 +1,10 @@
 var express = require('express');
+var hbs = require('hbs');
 
 var app = express();
+
+app.set('view engine', 'hbs');
+app.use(express.static(__dirname + '/public'));
 
 const PORT = process.env.PORT || 3000;
 
@@ -10,16 +14,24 @@ app.listen(PORT, function(){
 
 });
 
-// app.get('/', function(req, res){
-
-//     res.send('test');
-
-// });
-
-app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
 
-    res.sendFile(__dirname + '/index.html');
+    res.render('index.hbs',{
+
+        pageTitle: 'Index Page',
+        currentYear : new Date().getFullYear()
+    });
+
+});
+
+app.get('/home', function(req, res){
+
+    res.render('home.hbs', {
+
+        pageTitle: 'Home Page',
+        currentYear : new Date().getFullYear()
+
+    });
 
 });
