@@ -26,13 +26,14 @@ app.get('/', function(req, res){
 
 });
 
-app.get('/home:test', function(req, res){
+app.get('/home/:test', function(req, res){
 
+    console.log(req.params.test);
+    
     res.render('home.hbs', {
 
         pageTitle: 'Home Page',
         currentYear : new Date().getFullYear(),
-        test: req.params.test
 
     });
 
