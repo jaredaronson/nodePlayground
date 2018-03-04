@@ -27,8 +27,8 @@ app.get('/', function(req, res){
 });
 
 app.get('/home', function(req, res){
-
-    res.render('home.hbs', {
+    //var test = req.params.test;
+    res.render('home.hbs',{
 
         pageTitle: 'Home Page',
         currentYear : new Date().getFullYear(),
