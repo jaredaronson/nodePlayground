@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/jaredaronson/nodePlayground#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "firebase-admin": "^5.10.0",
     "hbs": "^4.0.1"
   }
 }
